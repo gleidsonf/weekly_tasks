@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval';
+        font-src 'self' https://fonts.gstatic.com;
+        style-src 'self' https://fonts.googleapis.com  'unsafe-inline';
+        media-src *;
+        img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Weekly Tasks</title>
+    </head>
+    <body>
+      <nav>
+        <div class="nav-wrapper indigo darken-1">
+          <a href="#" class="brand-logo center">Weekly Tasks</a>
+        </div>
+      </nav>
+      <ul class="tabs blue darken-1">
+        <li class="tab col s6"><a href="#tasks" class="white-text">Tasks</a></li>
+        <li class="tab col s6"><a href="#history" class="white-text">History</a></li>
+      </ul>
+      <div class="row">
+        <div class="col s12">
+        </div>
+
+        <div id="tasks" class="col s12">
+          <div id="sunday">
+            <h5 class="center">Sunday</h5>
+            <label>
+              <input type="checkbox" class="filled-in" name="sunday_option" value="Ola">
+              <span>Item 1</span>
+            </label>
+          </div>
+          <div id="monday">
+            <h5 class="center">Monday</h5>
+          </div>
+          <div id="tuesday">
+            <h5 class="center">Tuesday</h5>
+          </div>
+          <div class="wednesday">
+            <h5 class="center">Wednesday</h5>
+          </div>
+          <div id="thursday">
+            <h5 class="center">Thursday</h5>
+          </div>
+          <div id="friday">
+            <h5 class="center">Friday</h5>
+          </div>
+          <div id="">
+            <h5 class="center">Saturday</h5>
+          </div>
+        </div>
+        <div id="history" class="col s12">
+          <h1>History</h1>
+
+<i class="material-icons">face</i>
+        </div>
+        <a href="#" class="btn-floating btn-large waves-effect
+          waves-light indigo darken-1"><i class="material-icons">add</i>
+        </a>
+      </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
