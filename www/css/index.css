@@ -1,0 +1,17 @@
+#tasks h5 {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.brand-logo, h5 {
+  text-transform: uppercase;
+  font-family: 'Reenie Beanie', cursive;
+}
+
+span.badge.new:after {
+  content: "";
+}
+
+input[type=checkbox]:checked {
+  text-decoration: line-through;
+}
