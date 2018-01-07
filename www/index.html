@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
 
-        <!--
+<head>
+
+  <!--
         Customize this policy to fit your own app's needs. For more guidance, see:
             https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
         Some notes:
@@ -11,156 +12,168 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta charset="utf-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval';
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval';
         font-src 'self' https://fonts.gstatic.com;
         style-src 'self' https://fonts.googleapis.com  'unsafe-inline';
         media-src *;
         img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 
-        <link rel="stylesheet" href="css/materialize.min.css">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Weekly Tasks</title>
-    </head>
-    <body>
-      <nav>
-        <div class="nav-wrapper indigo darken-1">
-          <a href="#" class="brand-logo center">Weekly Tasks</a>
-        </div>
-      </nav>
-      <ul class="tabs blue darken-1">
-        <li class="tab col s6"><a href="#tasks" class="white-text">Tasks</a></li>
-        <li class="tab col s6"><a href="#history" class="white-text">History</a></li>
-      </ul>
-      <div class="row">
-        <div class="col s12">
-        </div>
+  <link rel="stylesheet" href="css/materialize.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <title>Weekly Tasks</title>
+</head>
 
-        <div id="tasks" class="col s12">
-          <div id="sunday">
-            <h5 class="center">Sunday</h5>
-            <ul>
-              <li class="hide">
+<body>
+
+  <header class="nav-wrapper container">
+    <div class="title center">
+      <a href="#" data-target="sidebar" class="sidenav-trigger left">
+                <i class="material-icons">menu</i>
+              </a>
+      <h6 class="brand-logo">Weekly Tasks</h6>
+    </div>
+    <!-- <a href="#" class="brand-logo center">Weekly Tasks</a> -->
+    <ul id="sidebar" class="sidenav">
+      <li><a href="#!" id="newtask"><i class="material-icons">add</i> New task</a></li>
+    </ul>
+  </header>
+
+
+  <div id="week" class="container">
+    <h6><b>Week 07 - 13</b></h6>
+    <div class="divider"></div>
+
+    <table>
+      <thead>
+        <th>Day</th>
+        <th>Task</th>
+        <th>Status</th>
+      </thead>
+      <tbody id="sunday">
+        <tr class="overdue">
+          <td>
+            <label>
+              <input type="checkbox" name="sunday_option" value="Ola">
+              <span>Sun</span>
+            </label>
+          </td>
+          <td>Bio Robotics Club</td>
+          <td class="status">Overdue</td>
+        </tr>
+      </tbody> <!-- END SUNDAY -->
+      <tbody id="monday">
+        <tr class="today">
+          <td>
+            <label>
+              <input type="checkbox" name="sunday_option" value="Ol1">
+              <span>Tue</span>
+            </label>
+          </td>
+          <td>Programming Class</td>
+          <td class="status">Today <span class="hide">06/01/2018</span> </td>
+        </tr>
+      </tbody> <!-- END MONDAY -->
+      <tbody id="tuesday">
+      </tbody>
+      <tbody id="wednesday">
+      </tbody>
+      <tbody id="thursday">
+      </tbody>
+      <tbody id="friday">
+      </tbody>
+      <tbody id="saturday">
+      </tbody>
+
+    </table>
+  </div>
+
+  <!-- Task form modal -->
+  <div id="taskform" class="container hide">
+    <div class="modal-content">
+      <h5 class="center"> <a href="#" id="back_week" class="left"> <i class="material-icons">arrow_back</i> </a>New task</h5>
+      <form class="taskform">
+
+        <input type="text" id="taskname" name="titulo" placeholder="Task name" required>
+        <table>
+          <tbody>
+            <tr>
+              <td>
                 <label>
-                  <input type="checkbox" class="filled-in" name="sunday_option" value="Ola">
-                  <span>Item 1</span>
-                  <span class="new badge">03/01/2018</span>
+                  <input type="radio" name="week" value="1">
+                  <span>Sun</span>
                 </label>
-              </li>
-            <ul>
-          </div>
-          <div id="monday">
-            <h5 class="center">Monday</h5>
-            <ul><ul>
-          </div>
-          <div id="tuesday">
-            <h5 class="center">Tuesday</h5>
-            <ul><ul>
-          </div>
-          <div class="wednesday">
-            <h5 class="center">Wednesday</h5>
-            <ul><ul>
-          </div>
-          <div id="thursday">
-            <h5 class="center">Thursday</h5>
-            <ul><ul>
-          </div>
-          <div id="friday">
-            <h5 class="center">Friday</h5>
-            <ul><ul>
-          </div>
-          <div id="saturday">
-            <h5 class="center">Saturday</h5>
-            <ul><ul>
-          </div>
-        </div>
-        <div id="history" class="col s12">
-          <h1>History</h1>
+              </td>
+              <td>
+                <label>
+                  <input type="radio" name="week" value="2">
+                  <span>Mon</span>
+                </label>
+              </td>
+              <td>
+                <label>
+                  <input type="radio" name="week" value="3">
+                  <span>Tue</span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label>
+                  <input type="radio" name="week" value="4">
+                  <span>Wed</span>
+                </label>
+              </td>
+              <td>
+                <label>
+                  <input type="radio" name="week" value="5">
+                  <span>Thu</span>
+                </label>
+              </td>
+              <td>
+                <label>
+                  <input type="radio" name="week" value="6">
+                  <span>Fri</span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label>
+                  <input type="radio" name="week" value="7">
+                  <span>Sat</span>
+                </label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
 
-        </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="modal-close waves-effect waves-red btn btn-flat left">Cancel</a>
+      <a href="#" class="modal-action modal-close waves-effect waves-green btn btn-primary right">Create</a>
+    </div>
+  </div>
 
-        <!-- Task form modal -->
-        <div id="taskform" class="modal">
-          <div class="modal-content">
-            <h5 class="center">News task</h5>
-            <form class="taskform" >
+  <div class="fixed-action-btn">
+    <a href="#taskform" class="btn-floating btn-large waves-effect
+                          waves-light right red modal-trigger indigo darken-1"><i class="material-icons">add</i></a>
+  </div>
 
-              <input type="text" id="taskname" name="titulo" placeholder="Task name" required>
-              <table>
-                <tbody>
-                  <tr>
-                    <td>
-                      <label>
-                        <input type="radio" name="week" value="1">
-                        <span>Sun</span>
-                      </label>
-                    </td>
-                    <td>
-                      <label>
-                        <input type="radio" name="week" value="2">
-                        <span>Mon</span>
-                      </label>
-                    </td>
-                    <td>
-                      <label>
-                        <input type="radio" name="week" value="3">
-                        <span>Tue</span>
-                      </label>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label>
-                        <input type="radio" name="week" value="4">
-                        <span>Wed</span>
-                      </label>
-                    </td>
-                    <td>
-                      <label>
-                        <input type="radio" name="week" value="5">
-                        <span>Thu</span>
-                      </label>
-                    </td>
-                    <td>
-                      <label>
-                        <input type="radio" name="week" value="6">
-                        <span>Fri</span>
-                      </label>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label>
-                        <input type="radio" name="week" value="7">
-                        <span>Sat</span>
-                      </label>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </form>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <!-- <script type="text/javascript" src="js/initializers.js"></script> -->
+  <script type="text/javascript" src="js/index.js"></script>
+</body>
 
-          </div>
-          <div class="modal-footer">
-            <a href="#" class="modal-close waves-effect waves-red btn btn-flat left">Cancel</a>
-            <a href="#" class="modal-action modal-close waves-effect waves-green btn btn-primary right">Create</a>
-          </div>
-        </div>
-
-        <div class="fixed-action-btn">
-          <a href="#taskform" class="btn-floating btn-large waves-effect
-                      waves-light right red modal-trigger indigo darken-1"><i class="material-icons">add</i></a>
-        </div>
-
-      </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
 </html>
+
+
+<!-- TODO Quando o item for marcado, alterar o status -->

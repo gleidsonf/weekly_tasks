@@ -1,17 +1,109 @@
-#tasks h5 {
-  background-color: #f2f2f2;
+/* Color palette */
+/* background body: #aea1e4;
+card week bg: #ffffff;
+card week text: #7f859b;
+red bg: fbeaea;
+red primary: eb9595;
+blue bg: f0ecff;
+blue pm: 9595eb;
+green bg: edfff4;
+green pm: 8fe8b3;
+*/
+* {
+  font-family: 'Muli', sans-serif;
+}
+body {
+  background-color: #aea1e4;
+}
+
+header {
+  padding: 15px 0px 15px 0px;
+}
+
+#week,
+#taskform {
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadown: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  min-height: 50vh;
+  background-color: #ffffff;
+  border-radius: 3px;
+  padding: 10px;
+  color: #7f859b;
+  /* margin: 10px;; */
+
+}
+
+#week h5 {
+  background-color: #FFFFFF;
   padding: 10px;
 }
 
+.brand-logo {
+  color: #ffffff;
+}
+
+.sidenav-trigger {
+  color: #ffffff;
+  /* margin-left: 10px; */
+}
+
 .brand-logo, h5 {
-  text-transform: uppercase;
-  font-family: 'Reenie Beanie', cursive;
+  padding: 3px;
+  /* text-transform: uppercase; */
+  /* font-family: 'Reenie Beanie', cursive; */
+  font-family: 'Muli', sans-serif;
+
 }
 
 span.badge.new:after {
   content: "";
 }
 
-input[type=checkbox]:checked {
-  text-decoration: line-through;
+.overdue [type="checkbox"] + span:not(.lever):before {
+  border: 2px solid #eb9595;
+  background-color: #fbeaea;
 }
+.today [type="checkbox"] + span:not(.lever):before {
+  border: 2px solid #9595eb;
+  background-color: #f0ecff;
+}
+
+.finish [type="checkbox"] + span:not(.lever):before {
+  border: 2px solid #8fe8b3;
+  background-color: #edfff4;
+}
+
+
+ #week [type="checkbox"]:checked + span:not(.lever):before {
+  width: 10px;
+  height: 15px;
+  background-color: transparent;
+  border-top: 2px solid transparent;
+  border-left: 2px solid transparent;
+}
+
+.overdue [type="checkbox"]:checked + span:not(.lever):before {
+  border-right: 2px solid #eb9595;
+  border-bottom: 2px solid #eb9595;
+}
+
+#week [type="checkbox"]:checked + span:not(.lever):before {
+  border-right: 2px solid #8fe8b3;
+  border-bottom: 2px solid #8fe8b3;
+}
+
+.overdue .status {
+  color: #eb9595;
+}
+
+.today .status {
+  color: #9595eb;
+}
+
+.finish .status {
+  color: #8fe8b3;
+}
+/* input[type=checkbox]:checked {
+  text-decoration: line-through;
+} */
