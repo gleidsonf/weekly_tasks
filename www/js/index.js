@@ -37,12 +37,13 @@ action.addEventListener('click', function() {
   let taskName = document.querySelector('#taskname');
   let day_week = document.querySelector('[type=radio]:checked');
   configureCheckbox(taskName, day_week);
+
+  // continua
   document.querySelector('form').reset();
   let week = document.querySelector('#week');
   week.setAttribute('class', 'container');
   document.querySelector('#taskform').setAttribute('class', 'hide');
   instance.close();
-
 });
 
 let newtask = document.querySelector('#newtask');
