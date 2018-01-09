@@ -5,24 +5,50 @@ class TaskView {
   }
 
   update(model) {
-    console.log(`#${model.day_name}`);
-    document.querySelector(`#${model.day_name}`).innerHTML = this._template(model);
+    // console.log(`#${model.day_name}`);
+    // if(model) {
+    //   document.querySelector(`#${model.day_name}`).innerHTML = this._template(model);
+    // }
 
-    // this._element.innerHTML = this._template(model);
+    this._element.innerHTML = this._template(model);
   }
 
-  _template(task) {
+  _template(model) {
+    // TODO Criar tabela e inserir numa div
     return `
-      <tr class="${task.status}">
-        <td>
-          <label>
-            <input type="checkbox" name="${task.day}_option" value="${task.date_task}">
-            <span>${DateHelper.short(task.day)}</span>
-          </label>
-        </td>
-        <td>${task.title}</td>
-        <td class="status">${task.status} <span class="hide">${task.date_task}</span></td>
-      </tr>
+    <table>
+      <thead>
+        <th>Day</th>
+        <th>Task</th>
+        <th>Status</th>
+      </thead>
+      ${
+        model.weekDays.forEach(function(value, key) {
+          console.log(value);
+          return `
+          <tbody id="#${DateHelper.dayName(key)}">
+            ${
+              value.map(n => {
+                return `
+                <tr class="${n.status}">
+                <td>
+                <label>
+                <input type="checkbox" name="${model.day}_option" value="${model.date_task}">
+                <span>${DateHelper.short(model.day)}</span>
+                </label>
+                </td>
+                <td>${model.title}</td>
+                <td class="status">${model.status} <span class="hide">${model.date_task}</span></td>
+                </tr>
+
+                `
+              })
+            }
+            </tbody>
+          `
+        })
+      }
+    </table>
     `
   }
 }

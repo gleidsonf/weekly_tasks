@@ -49,134 +49,86 @@
   <div id="week" class="container">
     <h6><b>Week 07 - 13</b></h6>
     <div class="divider"></div>
-
-    <table>
-      <thead>
-        <th>Day</th>
-        <th>Task</th>
-        <th>Status</th>
-      </thead>
-      <tbody id="sunday">
-        <tr class="overdue">
-          <td>
-            <label>
-              <input type="checkbox" name="sunday_option" value="Ola">
-              <span>Sun</span>
-            </label>
-          </td>
-          <td>Bio Robotics Club</td>
-          <td class="status">Overdue</td>
-        </tr>
-      </tbody> <!-- END SUNDAY -->
-      <tbody id="monday">
-        <tr class="today">
-          <td>
-            <label>
-              <input type="checkbox" name="sunday_option" value="Ol1">
-              <span>Tue</span>
-            </label>
-          </td>
-          <td>Programming Class</td>
-          <td class="status">Today <span class="hide">06/01/2018</span> </td>
-        </tr>
-      </tbody> <!-- END MONDAY -->
-      <tbody id="tuesday">
-      </tbody>
-      <tbody id="wednesday">
-      </tbody>
-      <tbody id="thursday">
-      </tbody>
-      <tbody id="friday">
-      </tbody>
-      <tbody id="saturday">
-      </tbody>
-
-    </table>
+    <div id="container-table">
+    </div>
   </div>
 
   <!-- Task form modal -->
   <div id="taskform" class="container hide">
-    <div class="modal-content">
-      <h5 class="center"> <a href="#" id="back_week" class="left"> <i class="material-icons">arrow_back</i> </a>New task</h5>
-      <form class="taskform">
+    <h5 class="center"> <a href="#" id="back_week" class="left"> <i class="material-icons">arrow_back</i> </a>New task</h5>
+    <form class="taskform" method="post">
 
-        <input type="text" id="taskname" name="titulo" placeholder="Task name" required>
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <label>
-                  <input type="radio" name="week" value="1">
-                  <span>Sun</span>
-                </label>
-              </td>
-              <td>
-                <label>
-                  <input type="radio" name="week" value="2">
-                  <span>Mon</span>
-                </label>
-              </td>
-              <td>
-                <label>
-                  <input type="radio" name="week" value="3">
-                  <span>Tue</span>
-                </label>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label>
-                  <input type="radio" name="week" value="4">
-                  <span>Wed</span>
-                </label>
-              </td>
-              <td>
-                <label>
-                  <input type="radio" name="week" value="5">
-                  <span>Thu</span>
-                </label>
-              </td>
-              <td>
-                <label>
-                  <input type="radio" name="week" value="6">
-                  <span>Fri</span>
-                </label>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label>
-                  <input type="radio" name="week" value="7">
-                  <span>Sat</span>
-                </label>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </form>
+      <input type="text" id="taskname" name="titulo" placeholder="Task name" required>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <label>
+                <input type="radio" name="week" value="1">
+                <span>Sun</span>
+              </label>
+            </td>
+            <td>
+              <label>
+                <input type="radio" name="week" value="2">
+                <span>Mon</span>
+              </label>
+            </td>
+            <td>
+              <label>
+                <input type="radio" name="week" value="3">
+                <span>Tue</span>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>
+                <input type="radio" name="week" value="4">
+                <span>Wed</span>
+              </label>
+            </td>
+            <td>
+              <label>
+                <input type="radio" name="week" value="5">
+                <span>Thu</span>
+              </label>
+            </td>
+            <td>
+              <label>
+                <input type="radio" name="week" value="6">
+                <span>Fri</span>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>
+                <input type="radio" name="week" value="7">
+                <span>Sat</span>
+              </label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="white-text waves-effect waves-green btn btn-primary right" type="submit">Create</button>
 
-    </div>
-    <div class="modal-footer">
-      <a href="#" class="modal-close waves-effect waves-red btn btn-flat left">Cancel</a>
-      <a href="#" class="modal-action modal-close waves-effect waves-green btn btn-primary right">Create</a>
-    </div>
-  </div>
-
-  <div class="fixed-action-btn">
-    <a href="#taskform" class="btn-floating btn-large waves-effect
-                          waves-light right red modal-trigger indigo darken-1"><i class="material-icons">add</i></a>
+    </form>
   </div>
 
   <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
   <!-- <script type="text/javascript" src="js/initializers.js"></script> -->
-  <script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript" src="js/models/Task.js"></script>
+  <script type="text/javascript" src="js/models/WeekTaskList.js"></script>
   <script type="text/javascript" src="js/models/TaskList.js"></script>
   <script type="text/javascript" src="js/controllers/TaskController.js"></script>
   <script type="text/javascript" src="js/helpers/DateHelper.js"></script>
   <script type="text/javascript" src="js/views/TaskView.js"></script>
-
+  <script type="text/javascript" src="js/initializers.js"></script>
+  <!-- <script type="text/javascript">
+    let taskController = new TaskController();
+  </script> -->
 
 </body>
 

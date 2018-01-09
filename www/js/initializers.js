@@ -10,5 +10,18 @@
 //     }
 // });
 
-let elem = document.querySelector('.sidenav');
-let instance = M.Sidenav.init();
+var elem = document.querySelector('.sidenav');
+var instance = M.Sidenav.init(elem, {});
+
+let newtask = document.querySelector('#newtask');
+
+newtask.addEventListener('click', function() {
+  let week = document.querySelector('#week');
+  week.setAttribute('class', 'hide');
+  document.querySelector('#taskform').setAttribute('class', 'container');
+  instance.close();
+});
+
+
+let taskController = new TaskController();
+document.querySelector('form').addEventListener('submit', event => {taskController.add(event)})
