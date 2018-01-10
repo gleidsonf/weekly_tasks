@@ -23,5 +23,7 @@ newtask.addEventListener('click', function() {
 });
 
 
-let taskController = new TaskController();
-document.querySelector('form').addEventListener('submit', event => {taskController.add(event)})
+// document.addEventListener('DOMContentLoaded',() => {
+//   let taskController = new TaskController();
+//   document.querySelector('form').addEventListener('submit', event => {taskController.add(event)})
+// });

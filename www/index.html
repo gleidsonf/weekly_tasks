@@ -17,6 +17,7 @@
         font-src 'self' https://fonts.gstatic.com;
         style-src 'self' https://fonts.googleapis.com  'unsafe-inline';
         media-src *;
+        script-src * data: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval';
         img-src 'self' data: content:;">
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
@@ -56,7 +57,7 @@
   <!-- Task form modal -->
   <div id="taskform" class="container hide">
     <h5 class="center"> <a href="#" id="back_week" class="left"> <i class="material-icons">arrow_back</i> </a>New task</h5>
-    <form class="taskform" method="post">
+    <form class="taskform" method="post" onsubmit="taskController.add(event)">
 
       <input type="text" id="taskname" name="titulo" placeholder="Task name" required>
       <table>
@@ -64,7 +65,7 @@
           <tr>
             <td>
               <label>
-                <input type="radio" name="week" value="1">
+                <input type="radio" checked name="week" value="1">
                 <span>Sun</span>
               </label>
             </td>
@@ -126,9 +127,9 @@
   <script type="text/javascript" src="js/helpers/DateHelper.js"></script>
   <script type="text/javascript" src="js/views/TaskView.js"></script>
   <script type="text/javascript" src="js/initializers.js"></script>
-  <!-- <script type="text/javascript">
+  <script type="text/javascript">
     let taskController = new TaskController();
-  </script> -->
+  </script>
 
 </body>
 

@@ -13,7 +13,7 @@ class Task {
   }
 
   get dayID() {
-    return _dayID;
+    return this._dayID;
   }
 
   get title() {
