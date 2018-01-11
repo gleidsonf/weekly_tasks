@@ -14,13 +14,13 @@ class DateHelper {
   }
 
   static dateToStatus(date) {
-    current_date = new Date().toLocaleDateString();
+    var current_date = new Date().toLocaleDateString();
     if (date == current_date) {
-      return 'Today';
+      return 'today';
     } else if (date < current_date) {
-      return 'Overdue';
+      return 'overdue';
     }
-    return 'Afterwards';
+    return 'afterwards';
   }
 
   static dayName(day_week) {
@@ -36,7 +36,7 @@ class DateHelper {
 
     let weekMap = new Map(week);
 
-    return weekMap.get(parseInt(day_week.value));
+    return weekMap.get(parseInt(day_week));
   }
   // short(day_name) {
   //   return DateHelper.capitalize().substring(0, 3);

@@ -21,8 +21,8 @@ class TaskController {
 // day_week, title, date_task
   _createTask() {
     return new Task(
-      // document.querySelector('[type=radio]:checked').value,
-      this._dayWeek.value,
+      document.querySelector('[type=radio]:checked').value,
+      // this._dayWeek.value,
       this._inputTaskName.value,
       new Date()
     );

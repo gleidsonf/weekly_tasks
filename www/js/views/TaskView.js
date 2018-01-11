@@ -34,11 +34,11 @@ class TaskView {
           <td>
           <label>
           <input type="checkbox" name="${n.day}_option" value="${n.date_task}">
-          <span>${DateHelper.short(n.day)}</span>
+          <span>${DateHelper.short(n.day_name)}</span>
           </label>
           </td>
           <td>${n.title}</td>
-          <td class="status">${model.status} <span class="hide">${model.date_task}</span></td>
+          <td class="status">${n.status} <span class="hide">${n.date_task}</span></td>
         </tr>
         `
       })}
