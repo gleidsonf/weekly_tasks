@@ -13,10 +13,19 @@ class TaskView {
     this._element.innerHTML = this._template(model);
   }
 
+
   returnToHome() {
     let week = document.querySelector('#week');
     week.setAttribute('class', 'container');
     document.querySelector('#taskform').setAttribute('class', 'hide');
+  }
+
+  static setStatus(tr) {
+    if(tr.querySelector('[type=checkbox]').checked) {
+      tr.querySelector('.status').textContent = 'done';
+      tr.querySelector('.task-title').classList.add('strike');
+      tr.querySelector('[type=checkbox]').disabled = true;
+    }
   }
 
   _template(model) {
@@ -30,14 +39,14 @@ class TaskView {
       <tbody>
       ${model.tasks.map(n => {
         return `
-        <tr class="${n.status}">
+        <tr class="${n.status}" onchange="TaskView.setStatus(this)">
           <td>
           <label>
           <input type="checkbox" name="${n.day}_option" value="${n.date_task}">
           <span>${DateHelper.short(n.day_name)}</span>
           </label>
           </td>
-          <td>${n.title}</td>
+          <td class="task-title">${n.title}</td>
           <td class="status">${n.status} <span class="hide">${n.date_task}</span></td>
         </tr>
         `

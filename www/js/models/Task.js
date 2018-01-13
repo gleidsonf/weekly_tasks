@@ -27,7 +27,7 @@ class Task {
   get date_task() {
     return this._date_task;
   }
-
+  
   get status() {
     return DateHelper.dateToStatus(this._date_task);
   }
